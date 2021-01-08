@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React , {useState} from 'react'
+import Input from './component/Input'
+import Data from './component/Data'
 function App() {
+  const [bill , setBill] = useState('');
+  const [paid , setPaid] = useState('');
+  const [msg , setMsg] = useState('');
+  const [rem , setRem] = useState('');
+  console.log(rem)
+  console.log(msg)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Cash Register</h1>
+      <Input bill = {bill} setBill = {setBill} paid = {paid} setPaid = {setPaid} rem = {rem} setRem = {setRem} setMsg = {setMsg}/>
+      <Data rem = {rem} msg = {msg}/>
     </div>
   );
 }
